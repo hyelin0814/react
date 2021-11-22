@@ -1,12 +1,10 @@
 
 
-App=()=> {
+const App = () => {
   return (
-    <> 
-    app
-    <div></div>
-    </>
-  
+    <>
+   App
+   </>
   );
 }
 
