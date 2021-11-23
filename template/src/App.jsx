@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 const App = () => {
- let [name,setName] = useState('기메린') //let name = '기메린'
-  let fn = (e) => { 
+  let [name, setName] = useState('기메린') //let name = '기메린'
+  let fn = (e) => {
     setName(e.target.innerText) //name = e.target.innerText
-}
+  }
   return (
     <>
       <p>안녕하세요 {name}입니다</p>
