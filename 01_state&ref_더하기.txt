@@ -9,3 +9,8 @@
 ■ start변수 
   - 값이 변하면 화면이 변한다
   - 함수를 임포트 해야 함
+    import { useState } form 'react';
+  - 선언
+    let [name,setName] = useState('홍길동') // let name = "홍길동"
+  - 변경
+  setName(e.target.innerText) 
