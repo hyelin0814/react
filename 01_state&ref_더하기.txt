@@ -14,3 +14,15 @@
     let [name,setName] = useState('홍길동') // let name = "홍길동"
   - 변경
   setName(e.target.innerText) 
+  - state가 변경되면 화면을 리렌더링 한다
+  - 랜더링이 다시 이루어진 다음 state값이 변경된다
+
+■ 객체찾기, useRef()
+  - jsx문법이 실제 html로 렌더링되고 나서야 객체를 찾을 수 있다
+    렌더링 된 후에 실행되는 함수(ex.이벤트함수)에는 useRef를 사용하지 않아도 무방하다
+  - ref 선언
+    const 객체이름 = useRef()
+  - ref 연동
+    <input ref = {객체이름}/>
+  - ref 호출
+    객체이름.current.value
