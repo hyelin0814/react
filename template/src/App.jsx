@@ -1,35 +1,33 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 const App = () => {
-  const [_manArr,_setManArr] = useState([])
-  const [_womenArr,_setWomenArr] = useState()
-
-  const refNameInput = useRef()
-  const refAgeInput = useRef()
-
-  const fnAddArr = ()=>{
-    let name = refNameInput.current.value
-    let age = refAgeInput.current.value
+  const [_arr, _setArr] = useState([])
+  const fnAdd = () => {
+    let key = Date.now()
+    _setArr([..._arr,key])
   }
-  const fnChangeGender = (e)=>{
-    let gender = e.target.value
-
+  const fnDel = (e)=>{
+    let key = parseInt(e.target.getAttribute('deta-key'))
+    let arr = _arr.filter((v)=>{
+      return v!== key
+    })  
+    _setArr([...arr])
   }
   return (
     <>
-      <p>이름,나이,성별을 입력하고 추가버튼을 누르면 성별이 구분되서 출력합니다</p>
-      이름 <input ref ={refNameInput}type="text" /> <br/>
-      나이 <input ref ={refAgeInput} type="text" /> <br/>
-      <input onChange={fnChangeGender} defaultValue="man" type="radio" name="gender"/>남  
-      <input onChange={fnChangeGender} defaultValue="woman" type="radio" name="gender"/>여
-      <br/>
-      <button onClick={fnAddArr}>추가하기</button>
+      <button onClick={fnAdd}>배열추가</button>
       <hr />
-      남자명단현황
-      <p></p>
-      <hr />
-      여자명단현황
-      <p></p>
+
+      {
+        _arr.map((v)=>{
+          return(
+          <p key={v}>
+            {v}
+            <button  onClick={fnDel} deta-key={v}>삭제</button>
+          </p>
+          )
+        })
+      }
     </>
   );
 };
