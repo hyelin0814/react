@@ -1,0 +1,54 @@
+html,body{
+  height: 100%;
+}/*높이 100% 줄 때 필요행*/
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  word-break: keep-all;/*띄어쓰기 단위로 떨어짐*/
+}
+body{
+  /* px, pt, em, rem, vw, vh */
+  
+  text-decoration: none;/* line-under line-over line-thorught */
+  font-style: normal;/* italic, normal */
+  font-weight: normal;/* thin, normal,bold */
+}
+a,span,small,b,i,strong,em,label{
+  display: inline-block;
+}
+li{list-style: none;}/*li 앞에 동그라미 없애기ㅋ*/
+table{
+  border-spacing: 0;/* 표 테두리 간격 합침 */
+  border-collapse: collapse;/* 테두리 중첩 */
+}
+select,textarea,input{
+  box-sizing: border-box;/* 테두리를 기준으로 크기를 정함 */
+}
+button{/*버튼모양을 다 없앰*/
+border: none;
+background: none;
+cursor: pointer;/* 버튼위에 커서를 올리면 손가락모양으로 변함 */
+}
+iframe,fieldset{
+  border: none;
+}
+
+.hidden{
+position: fixed;
+left:-100000px
+}
+
+.clearfix::after{
+  content: "";
+  clear: both;
+  display: block;}
+  /*class에 clearfix를 주면 clearfix한번만 적으면 가능쓰 
+clearfix는 float할때 항상*/

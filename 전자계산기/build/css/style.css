@@ -1,0 +1,23 @@
+
+@media screen and (min-width: 800px) {
+  .padding_v {
+    padding: 70px 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .padding_v {
+    padding: 40px 0;
+  }
+}
+.clearfix::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+body {
+  font-family: "Raleway", "Nanum Gothic", sans-serif;
+  font-size: 15px;
+  line-height: normal;
+  color: #666;
+}

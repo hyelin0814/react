@@ -1,0 +1,117 @@
+@import 'mixin';
+
+body{
+  background-image: url(../img/paper.jpg);
+  background-size: cover;
+}
+#root{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+main{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 50px 35px;
+  background-image: url(../img/bg.png);
+  background-size: 100% 100%;
+}
+h1{
+  position: absolute;
+  width: 50%;
+  left:30%; top: 3%;
+  img{
+    display: block;
+    width: 100%;
+    mix-blend-mode: overlay;
+  }
+}
+.output{
+  width: 100%;
+  position: relative;
+  height: 35%;
+  padding-top: 15%;
+  font-size: 1.3em;
+  color: #222;
+  background-image: url(../img/output.png);
+  background-size: 100% 100%;
+  
+  img{
+    width: 7%;
+    mix-blend-mode: multiply;
+  }
+  div.inner{
+    width: 80%;
+    height: 65%;
+    left: 10%;
+    top: 30%;
+    position: absolute;
+    box-sizing: border-box;
+
+  }
+}
+.btnContainer{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  pointer-events: none;
+  &:active{
+    button{
+      opacity: 0.5;
+      transform: scale(0.8);
+    }
+  }
+  button{
+    pointer-events:fill;
+    width: 25%;
+    transition: all 0.2s;
+    margin-bottom: 5px;
+    &:nth-child(16)~*{margin-bottom: 0;}
+    &.claer{background: orangered; color: #FFF;}
+    &.delete{background: #222 ; color: #FFF;}
+    &.calc{background: orange; color: #FFF;}
+    &:active{
+      transform: scale(1.5);
+      z-index: 1;
+      opacity: 1;
+    }
+    &:first-child img{width: 50%;}
+    img{
+      width: 25%;
+      mix-blend-mode: multiply;
+    }
+  }
+}//btnContainer
+
+div.sorry,div.err{
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(#000,0.5);
+  img{
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 600px;
+    animation: jello 1s;
+  }
+}

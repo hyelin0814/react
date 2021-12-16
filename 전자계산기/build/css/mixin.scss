@@ -1,0 +1,59 @@
+
+
+@mixin full_h{
+  height: 100%;
+  @media screen and (min-width:1000px){
+    min-height: 700px;
+  }//lg
+  @media screen and (max-width:1000px){
+    min-height: 400px;
+  }//sm
+}
+
+
+
+@mixin content_width {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@mixin padding_v {
+  @media screen and (min-width: 800px) {
+    padding: 70px 0;
+  }
+  @media screen and (max-width: 800px) {
+    padding: 40px 0;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    //::after
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+@mixin hidden {
+  position: fixed;
+  left: -100000px;
+}
+
+@mixin en {
+  font-family: "Anton", sans-serif;
+}
+
+@mixin icon($selector, $code) {
+  &::#{$selector} {
+    content: $code;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
